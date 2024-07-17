@@ -1,15 +1,19 @@
 import { PRODUCTS, Product } from './dataset';
 
+export interface ProductDataReturnType {
+    categories: string[];
+    categoryToProducts: { [category: string]: Product[] };
+}
 
-const ProductData = () => {
+export const ProductData = (): ProductDataReturnType => {
 
-    const categorySet = new Set();
+    const categorySet = new Set<string>();
     const categoryToProducts: { [category: string]: Product[] } = {};
 
     categoryToProducts["All"] = PRODUCTS;
 
     PRODUCTS.forEach(product => {
-        var category = product.category;
+        const category = product.category;
         if (categoryToProducts[category]) {
             categoryToProducts[category].push(product);
         } else {
@@ -25,8 +29,6 @@ const ProductData = () => {
     console.log("Total categories ", categories.length);
     console.log("Total products ", categoryToProducts["All"].length);
 
-    return { categories, categoryToProducts };
-
+    const productDataReturnType: ProductDataReturnType = { categories, categoryToProducts };
+    return productDataReturnType;
 };
-
-export default ProductData;

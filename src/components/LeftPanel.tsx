@@ -7,12 +7,13 @@ interface LeftPanelProps {
     isOpen: boolean;
     togglePanel: () => void;
     selectedCategory: string; // Receive selected category as prop
+    categories: string[]
 
     onCategoryClick: (category: string) => void; // Callback to handle category click
 
 }
 
-const LeftPanel = ({ isOpen, togglePanel, selectedCategory, onCategoryClick }: LeftPanelProps) => {
+const LeftPanel = ({ isOpen, togglePanel, categories, selectedCategory, onCategoryClick }: LeftPanelProps) => {
 
     useEffect(() => {
         if (isOpen) {
@@ -23,8 +24,7 @@ const LeftPanel = ({ isOpen, togglePanel, selectedCategory, onCategoryClick }: L
     }, [isOpen]);
 
 
-    // Extract unique categories from PRODUCTS
-    const categories = ["All", ...Array.from(new Set(PRODUCTS.map(product => product.category)))];
+
 
 
     // Handle category click

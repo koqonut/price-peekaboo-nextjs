@@ -133,16 +133,6 @@
   background-color: white;
 }
 
-.hamburger-button {
-  position: fixed;
-  top: 4rem;
-  left: 4rem;
-  padding: 0.5rem;
-  background-color: #ccc;
-  border-radius: 0.25rem;
-  z-index: 30;
-}
-
 .panels-container {
   display: flex;
 }

@@ -61,8 +61,14 @@ export function DataTable<TData, TValue>({
         }
     })
 
+    React.useEffect(() => {
+        // Reset the input value when the component mounts
+        table.getColumn("name")?.setFilterValue("");
+    }, []); // Empty dependency array ensures this effect runs only once
+
     return (
-        <div>
+
+        < div >
 
             <div className="flex items-center py-4">
                 <Input
@@ -77,6 +83,7 @@ export function DataTable<TData, TValue>({
 
             <div className="rounded-md border">
                 <Table>
+
                     <TableHeader>
                         {table.getHeaderGroups().map((headerGroup) => (
                             <TableRow key={headerGroup.id}>
@@ -138,6 +145,6 @@ export function DataTable<TData, TValue>({
                     Next
                 </Button>
             </div>
-        </div>
+        </div >
     )
 }
