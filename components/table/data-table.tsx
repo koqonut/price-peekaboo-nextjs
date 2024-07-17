@@ -3,7 +3,9 @@ import * as React from "react"
 import {
     ColumnDef,
     flexRender,
+    ColumnFiltersState,
     getCoreRowModel,
+    getFilteredRowModel,
     SortingState,
     useReactTable,
     getPaginationRowModel,
@@ -18,7 +20,7 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table"
-
+import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
 interface DataTableProps<TData, TValue> {
@@ -32,7 +34,7 @@ export function DataTable<TData, TValue>({
     columns,
     data,
 }: DataTableProps<TData, TValue>) {
-
+    const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
     const [sorting, setSorting] = React.useState<SortingState>([])
     const table = useReactTable({
         data,
@@ -40,15 +42,35 @@ export function DataTable<TData, TValue>({
         getCoreRowModel: getCoreRowModel(),
         getPaginationRowModel: getPaginationRowModel(),
         onSortingChange: setSorting,
+        onColumnFiltersChange: setColumnFilters,
         getSortedRowModel: getSortedRowModel(),
+        getFilteredRowModel: getFilteredRowModel(), // needed for client-side filtering
         state: {
             sorting,
+            columnFilters,
         },
+        initialState: {
+            pagination: {
+                pageSize: 20,
+            },
+            columnVisibility: { "id": false },
+
+        }
     })
 
     return (
         <div>
 
+            <div className="flex items-center py-4">
+                <Input
+                    placeholder="Filter Products..."
+                    value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
+                    onChange={(event) =>
+                        table.getColumn("name")?.setFilterValue(event.target.value)
+                    }
+                    className="max-w-sm"
+                />
+            </div>
 
             <div className="rounded-md border">
                 <Table>

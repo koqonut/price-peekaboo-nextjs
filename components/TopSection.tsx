@@ -20,7 +20,9 @@ const TopSection = () => {
             <header className="laptop-header  w-full ">
 
             </header>
-            {/* Search Input and Button */}
+            {/* Search Input and Button 
+
+         
             <div className="flex items-center p-4">
                 <input
                     type="text"
@@ -34,7 +36,7 @@ const TopSection = () => {
                     onClick={handleSearchSubmit}
                     className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600"
                 >
-                    {/* Use the SVG from the public folder */}
+                    {/* Use the SVG from the public folder *
                     <Image
                         src="/magnifying-glass-solid.svg"
                         alt="Search"
@@ -43,6 +45,8 @@ const TopSection = () => {
                     />
                 </button>
             </div>
+
+            */}
         </div>
     );
 };
