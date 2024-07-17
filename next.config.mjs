@@ -11,6 +11,9 @@ const nextConfig = {
   },
   basePath: "/price-peekaboo-nextjs",
   reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
   output: "export",  // <=== enables static exports
 };
 
