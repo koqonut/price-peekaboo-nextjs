@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+
+const isProd = process.env.NODE_ENV === 'production';
+
 const nextConfig = {
   exportPathMap: async function (
     defaultPathMap,
@@ -9,7 +12,9 @@ const nextConfig = {
       // Add other paths here if needed
     }
   },
-  basePath: "/price-peekaboo-nextjs",
+  basePath: isProd ? '/price-peekaboo-nextjs' : '',
+  assetPrefix: isProd ? '/price-peekaboo-nextjs/' : '',
+
   reactStrictMode: true,
   output: "export",  // <=== enables static exports
 };

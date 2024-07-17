@@ -1,3 +1,4 @@
+'use client'
 // components/LeftPanel.tsx
 import { PRODUCTS } from "../data/dataset";
 import { useEffect, useState } from "react"

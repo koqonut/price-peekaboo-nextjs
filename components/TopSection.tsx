@@ -1,3 +1,4 @@
+'use client'
 // components/TopSection.tsx
 import { useState } from "react";
 import Image from "next/image";

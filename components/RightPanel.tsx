@@ -1,3 +1,4 @@
+'use client'
 // components/RightPanel.tsx
 
 import TopSection from './TopSection';

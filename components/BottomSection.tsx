@@ -1,10 +1,12 @@
+'use client'
 // components/BottomSection.tsx
-import { DataTableDemo } from './DataTableDemo';
+
+
 
 const BottomSection = () => {
     return (
         <div className="p-4">
-            <DataTableDemo></DataTableDemo>
+            All is well that ends well
         </div>
     );
 };

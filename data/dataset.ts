@@ -1,3 +1,5 @@
+'use client'
+
 type Product = {
     id: number
     category: string
