@@ -1,6 +1,6 @@
 'use client'
 
-type Product = {
+export type Product = {
     id: number
     category: string
     price: string

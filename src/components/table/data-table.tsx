@@ -19,20 +19,25 @@ import {
     TableHead,
     TableHeader,
     TableRow,
-} from "@/components/ui/table"
-import { Input } from "@/components/ui/input"
-import { Button } from "@/components/ui/button"
+} from "@/src/components/ui/table"
+import { Input } from "@/src/components/ui/input"
+import { Button } from "@/src/components/ui/button"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
     data: TData[]
+    pagination: { pageSize: number, }
+    columnVisibility: { [key: string]: boolean }
 }
+
 
 
 
 export function DataTable<TData, TValue>({
     columns,
     data,
+    pagination,
+    columnVisibility
 }: DataTableProps<TData, TValue>) {
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
     const [sorting, setSorting] = React.useState<SortingState>([])
@@ -50,10 +55,8 @@ export function DataTable<TData, TValue>({
             columnFilters,
         },
         initialState: {
-            pagination: {
-                pageSize: 20,
-            },
-            columnVisibility: { "id": false },
+            pagination: pagination,
+            columnVisibility: columnVisibility,
 
         }
     })

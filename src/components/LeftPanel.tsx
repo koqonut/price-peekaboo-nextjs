@@ -6,9 +6,13 @@ import { useEffect, useState } from "react"
 interface LeftPanelProps {
     isOpen: boolean;
     togglePanel: () => void;
+    selectedCategory: string; // Receive selected category as prop
+
+    onCategoryClick: (category: string) => void; // Callback to handle category click
+
 }
 
-const LeftPanel = ({ isOpen, togglePanel }: LeftPanelProps) => {
+const LeftPanel = ({ isOpen, togglePanel, selectedCategory, onCategoryClick }: LeftPanelProps) => {
 
     useEffect(() => {
         if (isOpen) {
@@ -22,12 +26,11 @@ const LeftPanel = ({ isOpen, togglePanel }: LeftPanelProps) => {
     // Extract unique categories from PRODUCTS
     const categories = ["All", ...Array.from(new Set(PRODUCTS.map(product => product.category)))];
 
-    const [selectedCategory, setSelectedCategory] = useState<string>("All"); // Default selected category
-
 
     // Handle category click
     const handleCategoryClick = (category: string) => {
-        setSelectedCategory(category);
+        onCategoryClick(category); // Notify parent component (RightPanel) of category change
+
     };
 
     return (

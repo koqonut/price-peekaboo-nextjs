@@ -12,6 +12,13 @@ const HomePage = () => {
     setIsOpen(!isOpen);
   };
 
+  const [selectedCategory, setSelectedCategory] = useState<string>("All"); // State for selected category
+
+
+  const handleCategoryClick = (category: string) => {
+    setSelectedCategory(category);
+  };
+
   return (
     <div className="main-container mx-auto p-0.1 rounded-lg bg-white" >
       {/* Hamburger button */}
@@ -48,12 +55,12 @@ const HomePage = () => {
       <div className="flex">
         {/* Left Panel */}
         <div className={`${isOpen ? 'block' : 'hidden'} flex-none w-auto min-w-[30px]`}>
-          <LeftPanel isOpen={isOpen} togglePanel={togglePanel} />
+          <LeftPanel isOpen={isOpen} togglePanel={togglePanel} selectedCategory={selectedCategory} onCategoryClick={handleCategoryClick} />
         </div>
 
         {/* Right Panel */}
         <div className={`flex-grow ${isOpen ? 'ml-[200px]' : 'w-full'}`}>
-          <RightPanel />
+          <RightPanel selectedCategory={selectedCategory} />
         </div>
       </div>
     </div>

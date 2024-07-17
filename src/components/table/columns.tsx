@@ -1,8 +1,9 @@
 "use client"
 
+import { Product } from '../../data/dataset'
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/src/components/ui/button"
 
 
 import {
@@ -12,21 +13,12 @@ import {
     DropdownMenuLabel,
     DropdownMenuSeparator,
     DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/src/components/ui/dropdown-menu"
 
 
 
 // This type is used to define the shape of our data.
-// You can use a Zod schema here if you want.
-export type Product = {
-    id: number
-    category: string
-    price: string
-    name: string
-    store: string
-    city: string
-    lastUpdatedDate: string
-}
+
 
 export const columns: ColumnDef<Product>[] = [
     {
@@ -144,3 +136,6 @@ export const columns: ColumnDef<Product>[] = [
     },
 
 ]
+
+export const pagination = { pageSize: 20, }
+export const columnVisibility = { "id": false }
