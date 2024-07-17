@@ -1,6 +1,6 @@
 // components/TopSection.tsx
 import { useState } from "react";
-import SearchIcon from "../public/magnifying-glass-solid.svg";
+import Image from "next/image";
 const TopSection = () => {
 
     const [searchQuery, setSearchQuery] = useState("");
@@ -20,7 +20,7 @@ const TopSection = () => {
 
             </header>
             {/* Search Input and Button */}
-            <div className="flex items-center">
+            <div className="flex items-center p-4">
                 <input
                     type="text"
                     placeholder="Search..."
@@ -34,10 +34,11 @@ const TopSection = () => {
                     className="ml-2 px-4 py-2 bg-blue-500 text-white rounded-md focus:outline-none hover:bg-blue-600"
                 >
                     {/* Use the SVG from the public folder */}
-                    <img
+                    <Image
                         src="/magnifying-glass-solid.svg"
                         alt="Search"
-                        className="w-6 h-6"
+                        width={28}  // Set the width of the SVG
+                        height={28} // Set the height of the SVG
                     />
                 </button>
             </div>
