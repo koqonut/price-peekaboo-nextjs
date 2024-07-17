@@ -7,9 +7,7 @@ import BottomSection from './BottomSection';
 const RightPanel = () => {
     return (
 
-        <div className=" p-4 bg-white border border-gray-500 text-green-500">
-            <p>This is the Right Panel</p>
-
+        <div className=" p-4 bg-white border border-gray-500">
             <TopSection />
             <MiddleSection />
             <BottomSection />

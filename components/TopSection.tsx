@@ -16,7 +16,7 @@ const TopSection = () => {
     return (
         <div className="p-4">
 
-            <header className="laptop-header relative w-full ">
+            <header className="laptop-header  w-full ">
 
             </header>
             {/* Search Input and Button */}

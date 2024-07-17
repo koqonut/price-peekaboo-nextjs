@@ -46,12 +46,12 @@ const HomePage = () => {
       {/* Panels Container */}
       <div className="flex">
         {/* Left Panel */}
-        <div className={`w-1/3 ${isOpen ? 'block' : 'hidden'}`}>
+        <div className={`${isOpen ? 'block' : 'hidden'} flex-none w-auto min-w-[30px]`}>
           <LeftPanel isOpen={isOpen} togglePanel={togglePanel} />
         </div>
 
         {/* Right Panel */}
-        <div className={`w-${isOpen ? '2/3' : 'full'}`}>
+        <div className={`flex-grow ${isOpen ? 'ml-[200px]' : 'w-full'}`}>
           <RightPanel />
         </div>
       </div>
