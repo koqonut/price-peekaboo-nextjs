@@ -14,7 +14,9 @@ const nextConfig = {
   },
   basePath: isProd ? '/price-peekaboo-nextjs' : '',
   assetPrefix: isProd ? '/price-peekaboo-nextjs/' : '',
-
+  images: {
+    unoptimized: true
+  },
   reactStrictMode: true,
   output: "export",  // <=== enables static exports
 };
