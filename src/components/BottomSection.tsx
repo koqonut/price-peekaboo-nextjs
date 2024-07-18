@@ -6,7 +6,7 @@ const DISCLAIMER_HEADING: string = "DISCLAIMER";
 
 const BottomSection = () => {
     return (
-        <div className="p-4">
+        <div className="p-8">
             <footer className="App-footer">
                 <p className="text-sm md:text-base lg:text-sm leading-relaxed text-center">
                     <strong>{DISCLAIMER_HEADING}:</strong> {DISCLAIMER_MSG}

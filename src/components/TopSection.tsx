@@ -9,16 +9,27 @@ const TopSection = () => {
         setSearchQuery(event.target.value);
     };
 
-    const handleSearchSubmit = () => {
-        // Implement search logic here
-        console.log("Searching for:", searchQuery);
-    };
+    const APP_ONE_LINER = "Don't overpay for everyday stuff!"
+
+    const APP_DESCRIPTION = "Check the lowest prices from the recent past to ensure you are getting the best deal today."
+
+    /*
+   const handleSearchSubmit = () => {
+       // Implement search logic here
+       console.log("Searching for:", searchQuery);
+   };
+   */
     return (
-        <div className="p-4">
+        <div className="p-8">
 
             <header className="laptop-header  w-full ">
 
             </header>
+            <div className="text-center p-2 text-black">
+                <p className="text-sm sm:text-lg mt-2">{APP_ONE_LINER}</p>
+                <p className="text-sm sm:text-lg mt-2">{APP_DESCRIPTION}</p>
+            </div>
+
             {/* Search Input and Button 
 
          
