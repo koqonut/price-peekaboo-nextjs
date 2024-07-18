@@ -1,7 +1,6 @@
 'use client'
-// components/LeftPanel.tsx
-import { PRODUCTS } from "../data/dataset";
-import { useEffect, useState } from "react"
+
+import { useEffect } from "react"
 
 interface LeftPanelProps {
     isOpen: boolean;
@@ -34,7 +33,7 @@ const LeftPanel = ({ isOpen, togglePanel, categories, selectedCategory, onCatego
     };
 
     return (
-        <div className={`fixed left-0 top-0 h-full bg-white shadow-lg z-20 w-64 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
+        <div className={`fixed left-0 top-0 h-full bg-blue-50 shadow-lg z-20 w-64 ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
             <div className="p-4">
                 <div className="image-boundary"></div>
                 <h2 className="category-heading">Categories</h2>

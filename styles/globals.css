@@ -147,3 +147,11 @@
   flex-grow: 1;
   /* Adjust ml-[200px] and w-full as per your requirements */
 }
+
+.footer {
+  flex-shrink: 0;
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
+}

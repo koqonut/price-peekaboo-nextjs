@@ -1,6 +1,6 @@
 "use client"
 
-import { Product } from '../../data/dataset'
+import { Product } from './dataset'
 import { ColumnDef } from "@tanstack/react-table"
 import { ArrowUpDown, MoreHorizontal } from "lucide-react"
 import { Button } from "@/src/components/ui/button"

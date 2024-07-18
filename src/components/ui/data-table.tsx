@@ -61,24 +61,38 @@ export function DataTable<TData, TValue>({
         }
     })
 
-    React.useEffect(() => {
+    // Function to reset filter input value
+    const handleResetFilter = () => {
+        table.getColumn("name")?.setFilterValue("");
+    };
+
+    React.useCallback(() => {
+        console.log("resetting filter")
         // Reset the input value when the component mounts
         table.getColumn("name")?.setFilterValue("");
     }, []); // Empty dependency array ensures this effect runs only once
-
+    { console.log("Load table"); }
     return (
 
         < div >
 
             <div className="flex items-center py-4">
                 <Input
-                    placeholder="Filter Products..."
+                    placeholder="Search items..."
                     value={(table.getColumn("name")?.getFilterValue() as string) ?? ""}
                     onChange={(event) =>
                         table.getColumn("name")?.setFilterValue(event.target.value)
                     }
                     className="max-w-sm"
                 />
+                <Button
+                    variant="outline"
+                    size="sm"
+                    onClick={handleResetFilter} // Call handleResetFilter on button click
+                    className="ml-2 bg-green-100 hover:bg-green-200 focus:bg-green-300"
+                >
+                    Clear Filter
+                </Button>
             </div>
 
             <div className="rounded-md border">
@@ -105,10 +119,10 @@ export function DataTable<TData, TValue>({
                     <TableBody>
                         {table.getRowModel().rows?.length ? (
                             table.getRowModel().rows.map((row) => (
+
                                 <TableRow
                                     key={row.id}
-                                    data-state={row.getIsSelected() && "selected"}
-                                >
+                                    data-state={row.getIsSelected() && "selected"}>
                                     {row.getVisibleCells().map((cell) => (
                                         <TableCell key={cell.id}>
                                             {flexRender(cell.column.columnDef.cell, cell.getContext())}

@@ -1,5 +1,5 @@
 'use client'
-// components/RightPanel.tsx
+
 import React from 'react';
 import { Product } from '../data/dataset';
 

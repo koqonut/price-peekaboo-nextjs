@@ -1,5 +1,4 @@
 'use client'
-// pages/index.tsx
 
 import { useState, useMemo } from 'react';
 import LeftPanel from '../../components/LeftPanel';
