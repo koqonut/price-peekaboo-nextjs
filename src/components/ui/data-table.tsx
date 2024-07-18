@@ -141,18 +141,28 @@ export function DataTable<TData, TValue>({
                 </Table>
             </div>
 
-            <div className="flex items-center justify-end space-x-2 py-4">
+            <div className="flex items-center space-x-2 py-4 justify-between">
+
                 <Button
                     variant="outline"
                     size="sm"
+                    className="ml-2 bg-orange-100 hover:bg-orange-200 focus:bg-orange-300"
+
                     onClick={() => table.previousPage()}
                     disabled={!table.getCanPreviousPage()}
                 >
                     Previous
                 </Button>
+
+                <p className="text-sm md:text-base lg:text-sm leading-relaxed text-center">
+                    Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
+                </p>
+
                 <Button
                     variant="outline"
                     size="sm"
+                    className="ml-2 bg-orange-100 hover:bg-orange-200 focus:bg-orange-300"
+
                     onClick={() => table.nextPage()}
                     disabled={!table.getCanNextPage()}
                 >

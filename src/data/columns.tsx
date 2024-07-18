@@ -137,5 +137,5 @@ export const columns: ColumnDef<Product>[] = [
 
 ]
 
-export const pagination = { pageSize: 20, }
+export const pagination = { pageSize: 10, }
 export const columnVisibility = { "id": false }
