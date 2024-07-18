@@ -66,12 +66,6 @@ export function DataTable<TData, TValue>({
         table.getColumn("name")?.setFilterValue("");
     };
 
-    React.useCallback(() => {
-        console.log("resetting filter")
-        // Reset the input value when the component mounts
-        table.getColumn("name")?.setFilterValue("");
-    }, []); // Empty dependency array ensures this effect runs only once
-    { console.log("Load table"); }
     return (
 
         < div >
