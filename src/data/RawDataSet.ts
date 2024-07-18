@@ -305,7 +305,7 @@ export const productArray: Product[] =
             "id": 34,
             "category": "Vegetables",
             "price": "2.49",
-            "name": "Karela",
+            "name": "Karela 1 LB",
             "lastUpdatedDate": "2024-07-18",
             "store": "Subzi Mandi",
             "city": "Brampton"
@@ -539,7 +539,7 @@ export const productArray: Product[] =
             "id": 60,
             "category": "Fruits",
             "price": "1.49",
-            "name": "papaya",
+            "name": "Papaya 1 LB",
             "lastUpdatedDate": "2024-07-18",
             "store": "Subzi Mandi",
             "city": "Brampton"
