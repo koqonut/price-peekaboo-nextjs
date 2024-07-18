@@ -6,11 +6,11 @@ const nextConfig = {
 
   //basePath: isProd ? '/price-peekaboo-nextjs' : '',
   //assetPrefix: isProd ? '/price-peekaboo-nextjs/' : '',
-  //images: {
-  //unoptimized: true
-  //},
+  images: {
+    unoptimized: true
+  },
   reactStrictMode: true,
-  //output: "export",  // <=== enables static exports
+  output: "export",  // <=== enables static exports
 };
 
 export default nextConfig;
