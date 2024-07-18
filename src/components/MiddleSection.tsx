@@ -1,9 +1,9 @@
 'use client'
 
-import { Product } from '../data/dataset';
+import { Product } from "../data/ProductDefinition";
 import { DataTable } from './ui/data-table';
 import React from 'react';
-import { columns, pagination, columnVisibility } from "../data/columns";
+import { columns, pagination, columnVisibility } from "../data/ProductTableHelper";
 
 interface MiddleSectionProps {
     selectedCategory: string; // Prop to receive selected category from parent component (RightPanel)

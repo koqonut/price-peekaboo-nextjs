@@ -1,4 +1,5 @@
-import { PRODUCTS, Product } from './dataset';
+import { productArray } from './RawDataSet';
+import { Product } from "./ProductDefinition";
 
 export interface ProductDataReturnType {
     categories: string[];
@@ -10,9 +11,9 @@ export const ProductData = (): ProductDataReturnType => {
     const categorySet = new Set<string>();
     const categoryToProducts: { [category: string]: Product[] } = {};
 
-    categoryToProducts["All"] = PRODUCTS;
+    categoryToProducts["All"] = productArray;
 
-    PRODUCTS.forEach(product => {
+    productArray.forEach(product => {
         const category = product.category;
         if (categoryToProducts[category]) {
             categoryToProducts[category].push(product);

@@ -1,7 +1,7 @@
 'use client'
 
 import React from 'react';
-import { Product } from '../data/dataset';
+import { Product } from "../data/ProductDefinition";
 
 import TopSection from './TopSection';
 import MiddleSection from './MiddleSection';
