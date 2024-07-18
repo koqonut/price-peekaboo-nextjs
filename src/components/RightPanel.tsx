@@ -17,7 +17,7 @@ const RightPanel = ({ selectedCategory, categoryToProducts }: RightPanelProps) =
 
     return (
 
-        <div className=" p-4 bg-white border border-gray-500">
+        <div className=" p-4 bg-white">
             <TopSection />
             <MiddleSection selectedCategory={selectedCategory} categoryToProducts={categoryToProducts} />
             <BottomSection />
