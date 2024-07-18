@@ -45,18 +45,20 @@ const HomePage = () => {
   return (
     <div className="main-container mx-auto p-0.1 rounded-lg bg-white" >
       {/* Hamburger button */}
-      <button
-        className="fixed top-4 left-4 p-2 bg-orange-200 rounded-md z-30"
+      {isOpen ? null : (
+        <button
+          className="fixed top-4 left-4 p-2 bg-orange-200 rounded-md z-30"
 
-        onClick={togglePanel}
-      >
-        <Image
-          src="/bars-solid.svg"
-          alt="Search"
-          width={20}  // Set the width of the SVG
-          height={20} // Set the height of the SVG
-        />
-      </button>
+          onClick={togglePanel}
+        >
+          <Image
+            src="/bars-solid.svg"
+            alt="Search"
+            width={20}  // Set the width of the SVG
+            height={20} // Set the height of the SVG
+          />
+        </button>
+      )}
 
       {/* Panels Container */}
       <div className="panels-container">
