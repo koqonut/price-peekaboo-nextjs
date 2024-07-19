@@ -12,6 +12,7 @@ import {
     getSortedRowModel
 } from "@tanstack/react-table"
 
+
 import {
     Table,
     TableBody,
@@ -83,7 +84,7 @@ export function DataTable<TData, TValue>({
                     variant="outline"
                     size="sm"
                     onClick={handleResetFilter} // Call handleResetFilter on button click
-                    className="ml-2 bg-green-100 hover:bg-green-200 focus:bg-green-300"
+                    className="ml-2 bg-orange-100 hover:bg-orange-200 focus:bg-orange-300"
                 >
                     Clear Filter
                 </Button>
@@ -140,7 +141,7 @@ export function DataTable<TData, TValue>({
                 <Button
                     variant="outline"
                     size="sm"
-                    className="ml-2 bg-green-100 hover:bg-green-200 focus:bg-green-300"
+                    className="ml-2 bg-orange-100 hover:bg-orange-200 focus:bg-orange-300"
 
                     onClick={() => table.previousPage()}
                     disabled={!table.getCanPreviousPage()}
@@ -148,14 +149,16 @@ export function DataTable<TData, TValue>({
                     Previous
                 </Button>
 
-                <p className="text-sm md:text-base lg:text-sm leading-relaxed text-center">
-                    Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
-                </p>
+                {table.getPageCount() > 0 && (
+                    <p className="text-sm md:text-base lg:text-sm leading-relaxed text-center">
+                        Page {table.getState().pagination.pageIndex + 1} of {table.getPageCount()}
+                    </p>
+                )}
 
                 <Button
                     variant="outline"
                     size="sm"
-                    className="ml-2 bg-green-100 hover:bg-green-200 focus:bg-green-300"
+                    className="ml-2 bg-orange-100 hover:bg-orange-200 focus:bg-orange-300"
 
                     onClick={() => table.nextPage()}
                     disabled={!table.getCanNextPage()}

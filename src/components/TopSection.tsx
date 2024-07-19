@@ -1,7 +1,13 @@
 'use client'
 
 import { useState } from "react";
-const TopSection = () => {
+
+interface TopSectionProps {
+    headingMessage: string; // Prop to receive selected category from parent component (RightPanel)
+    headingDescription: string
+};
+
+const TopSection = ({ headingMessage, headingDescription }: TopSectionProps) => {
 
     const [searchQuery, setSearchQuery] = useState("");
 
@@ -9,9 +15,6 @@ const TopSection = () => {
         setSearchQuery(event.target.value);
     };
 
-    const APP_ONE_LINER = "Don't overpay for everyday stuff!"
-
-    const APP_DESCRIPTION = "Check the lowest prices from the recent past to ensure you are getting the best deal today."
 
     /*
    const handleSearchSubmit = () => {
@@ -26,8 +29,8 @@ const TopSection = () => {
 
             </header>
             <div className="text-center p-2 text-black">
-                <p className="text-sm sm:text-lg mt-2">{APP_ONE_LINER}</p>
-                <p className="text-sm sm:text-lg mt-2">{APP_DESCRIPTION}</p>
+                <p className="text-sm sm:text-lg mt-2">{headingMessage}</p>
+                <p className="text-sm sm:text-m mt-2">{headingDescription}</p>
             </div>
 
             {/* Search Input and Button 
