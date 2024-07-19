@@ -6,7 +6,7 @@ import { Product } from "../data/ProductDefinition";
 import TopSection from './TopSection';
 import MiddleSection from './MiddleSection';
 import BottomSection from './BottomSection';
-import { APP_ONE_LINER, APP_DESCRIPTION } from './../utils/Constants';
+import { APP_ONE_LINER, APP_DESCRIPTION } from '../utils/Constants';
 
 interface RightPanelProps {
     selectedCategory: string; // Receive selected category as prop

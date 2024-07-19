@@ -18,8 +18,17 @@ import { Input } from "@/components/ui/input";
 import TopSection from "@/src/components/TopSection";
 
 const formSchema = z.object({
-    username: z.string().min(2, {
-        message: "Username must be at least 2 characters.",
+    Name: z.string().min(2, {
+        message: "Name must be at least 2 characters long.",
+    }),
+    Email: z.string().email({
+        message: "Invalid email address.",
+    }),
+    Subject: z.string().min(1, {
+        message: "Subject cannot be empty.",
+    }),
+    Message: z.string().min(1, {
+        message: "Message cannot be empty.",
     }),
 });
 
@@ -35,7 +44,7 @@ const ProfileForm = () => {
         },
     });
 
-    function onSubmit(values) {
+    function onSubmit(values: z.infer<typeof formSchema>) {
         console.log(values);
     }
 
