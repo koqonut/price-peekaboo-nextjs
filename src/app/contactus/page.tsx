@@ -3,6 +3,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
+import { Textarea } from "@/components/ui/textarea"
 import { CONTACT_US, CONTACT_US_DESCRIPTION } from '../../utils/Constants';
 
 import { Button } from "@/components/ui/button";
@@ -52,10 +53,10 @@ const ProfileForm = () => {
         <div className="main-container mx-auto p-0.1 rounded-lg bg-white" >
             <div className="panels-container">
                 <div className="right-panel w-full">
-                    <div className=" p-4 bg-white">
+                    <div className="p-4 bg-white">
                         <TopSection headingMessage={CONTACT_US} headingDescription={CONTACT_US_DESCRIPTION} />
 
-                        <div className="p-8">
+                        <div className="p-4 align-center">
                             <Form {...form} >
                                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                                     <FormField
@@ -120,7 +121,7 @@ const ProfileForm = () => {
                                             <FormItem className="space-y-2">
                                                 <FormLabel className="text-lg font-semibold text-orange-700">Message</FormLabel>
                                                 <FormControl>
-                                                    <Input
+                                                    <Textarea
                                                         placeholder="Go on, we’re all ears (well, eyes)"
                                                         {...field}
                                                         className="mt-1 block w-full rounded-md border-orange-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
