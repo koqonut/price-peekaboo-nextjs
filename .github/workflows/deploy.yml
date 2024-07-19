@@ -24,7 +24,7 @@ jobs:
           echo "Started npm install"
           npm install
           echo "Completed npm install"
-      - name: Build Next.js app
+      - name: Build PricePeekaboo app
         run: |
           echo "Started npm build"
           npm run build
@@ -35,11 +35,7 @@ jobs:
           role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
           aws-region: ${{ env.AWS_REGION }}
-      - name: Sts GetCallerIdentity
-        run: |
-          echo "Started GetCallerIdentity"
-          aws sts get-caller-identity
-          echo "Completed GetCallerIdentity"
+
       - name: Delete S3 bucket contents
         run: |
           echo "Deleting contents of S3 bucket..."
