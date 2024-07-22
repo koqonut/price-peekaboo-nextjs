@@ -17,6 +17,7 @@ const HomePage = () => {
 
 
   const handleCategoryClick = (category: string) => {
+    console.log("handleCategoryClick category ", category)
     setSelectedCategory(category);
   };
 

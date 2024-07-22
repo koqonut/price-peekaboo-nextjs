@@ -23,6 +23,7 @@ import {
 } from "@/src/components/ui/table"
 import { Input } from "@/src/components/ui/input"
 import { Button } from "@/src/components/ui/button"
+import { ChevronsRightLeft } from "lucide-react"
 
 interface DataTableProps<TData, TValue> {
     columns: ColumnDef<TData, TValue>[]
@@ -64,6 +65,7 @@ export function DataTable<TData, TValue>({
 
     // Function to reset filter input value
     const handleResetFilter = () => {
+        console.log("handleResetFilter called")
         table.getColumn("name")?.setFilterValue("");
     };
 
@@ -118,11 +120,18 @@ export function DataTable<TData, TValue>({
                                 <TableRow
                                     key={row.id}
                                     data-state={row.getIsSelected() && "selected"}>
-                                    {row.getVisibleCells().map((cell) => (
-                                        <TableCell key={cell.id}>
-                                            {flexRender(cell.column.columnDef.cell, cell.getContext())}
-                                        </TableCell>
-                                    ))}
+                                    {row.getVisibleCells().map((cell) => {
+                                        const numericId = parseInt(row.id, 10);
+                                        if (!isNaN(numericId) && numericId % 10 === 0) {
+                                            console.log(`Rendering cell ${cell.id} in row ${row.id}`);
+                                        }
+
+                                        return (
+                                            <TableCell key={cell.id}>
+                                                {flexRender(cell.column.columnDef.cell, cell.getContext())}
+                                            </TableCell>
+                                        );
+                                    })}
                                 </TableRow>
                             ))
                         ) : (

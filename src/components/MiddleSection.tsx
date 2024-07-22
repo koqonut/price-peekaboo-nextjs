@@ -11,6 +11,8 @@ interface MiddleSectionProps {
 }
 
 const MiddleSection = ({ selectedCategory, categoryToProducts }: MiddleSectionProps) => {
+    console.log("Middle section selectedCategory: ", selectedCategory)
+    console.log("Middle section selectedCategory size: ", categoryToProducts[selectedCategory].length)
 
     return (
         <div className="p-8">

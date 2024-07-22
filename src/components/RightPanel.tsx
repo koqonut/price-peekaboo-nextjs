@@ -15,7 +15,7 @@ interface RightPanelProps {
 }
 
 const RightPanel = ({ selectedCategory, categoryToProducts }: RightPanelProps) => {
-
+    console.log("selected catefory in right panel: ", selectedCategory);
     return (
 
         <div className=" p-4 bg-white">

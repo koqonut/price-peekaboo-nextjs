@@ -36,7 +36,9 @@ yarn-error.log*
 next-env.d.ts
 
 #terraform
-terraform/
-infra/
+terraform/.terraform/*
+*.hcl
 *.tfvars
-*.tf
+*.tfplan
+*.tfstate
+*.tfstate.backup
