@@ -64,12 +64,12 @@ const ProfileForm = () => {
                                         name="Name"
                                         render={({ field }) => (
                                             <FormItem className="space-y-2">
-                                                <FormLabel className="text-lg font-semibold text-green-700">Name</FormLabel>
+                                                <FormLabel className="text-lg font-semibold text-orange-700">Name</FormLabel>
                                                 <FormControl>
                                                     <Input
                                                         placeholder="Alias, pseudonym, stage name..."
                                                         {...field}
-                                                        className="mt-1 block w-full rounded-md border-green-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                                                        className="mt-1 block w-full rounded-md border-orange-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
                                                     />
                                                 </FormControl>
 
@@ -82,12 +82,12 @@ const ProfileForm = () => {
                                         name="Email"
                                         render={({ field }) => (
                                             <FormItem className="space-y-2">
-                                                <FormLabel className="text-lg font-semibold text-green-700">Email</FormLabel>
+                                                <FormLabel className="text-lg font-semibold text-orange-700">Email</FormLabel>
                                                 <FormControl>
                                                     <Input
                                                         placeholder="Your carrier pigeon's resting spot"
                                                         {...field}
-                                                        className="mt-1 block w-full rounded-md border-green-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                                                        className="mt-1 block w-full rounded-md border-orange-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
                                                     />
                                                 </FormControl>
 
@@ -101,12 +101,12 @@ const ProfileForm = () => {
                                         name="Subject"
                                         render={({ field }) => (
                                             <FormItem className="space-y-2">
-                                                <FormLabel className="text-lg font-semibold text-green-700">Subject</FormLabel>
+                                                <FormLabel className="text-lg font-semibold text-orange-700">Subject</FormLabel>
                                                 <FormControl>
                                                     <Input
                                                         placeholder="Your wish (we'll try our best to grant it)"
                                                         {...field}
-                                                        className="mt-1 block w-full rounded-md border-green-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                                                        className="mt-1 block w-full rounded-md border-orange-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
                                                     />
                                                 </FormControl>
 
@@ -119,12 +119,12 @@ const ProfileForm = () => {
                                         name="Message"
                                         render={({ field }) => (
                                             <FormItem className="space-y-2">
-                                                <FormLabel className="text-lg font-semibold text-green-700">Message</FormLabel>
+                                                <FormLabel className="text-lg font-semibold text-orange-700">Message</FormLabel>
                                                 <FormControl>
                                                     <Textarea
                                                         placeholder="Go on, we’re all ears (well, eyes)"
                                                         {...field}
-                                                        className="mt-1 block w-full rounded-md border-green-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
+                                                        className="mt-1 block w-full rounded-md border-orange-300 shadow-sm focus:border-indigo-500 focus:ring focus:ring-indigo-500 focus:ring-opacity-50"
                                                     />
                                                 </FormControl>
 
@@ -133,7 +133,7 @@ const ProfileForm = () => {
                                         )}
                                     />
 
-                                    <Button type="submit" className="w-full bg-green-200 hover:bg-green-300 text-green-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                                    <Button type="submit" className="w-full bg-orange-200 hover:bg-orange-300 text-orange-700 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                                         Submit
                                     </Button>
                                 </form>

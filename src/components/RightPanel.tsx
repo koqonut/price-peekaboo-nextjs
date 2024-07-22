@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { Product } from "../data/ProductDefinition";
-import ConsoleLogger from './ConsoleLogger';
+
 
 import TopSection from './TopSection';
 import MiddleSection from './MiddleSection';
@@ -22,7 +22,6 @@ const RightPanel = ({ selectedCategory, categoryToProducts }: RightPanelProps) =
         <div className=" p-4 bg-white">
 
             <TopSection headingMessage={APP_ONE_LINER} headingDescription={APP_DESCRIPTION} />
-            <ConsoleLogger />
             <MiddleSection selectedCategory={selectedCategory} categoryToProducts={categoryToProducts} />
             <BottomSection />
         </div>
