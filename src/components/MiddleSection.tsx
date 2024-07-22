@@ -17,9 +17,9 @@ const MiddleSection = ({ selectedCategory, categoryToProducts }: MiddleSectionPr
     return (
         <div className="p-8">
             <p className="text-sm md:text-base lg:text-lg leading-relaxed text-left">
-                <strong className="bg-orange-200 py-1 px-2 rounded">{selectedCategory}</strong>
+                <strong className="bg-green-200 py-1 px-2 rounded">{selectedCategory}</strong>
             </p>
-            <DataTable columns={columns} data={categoryToProducts[selectedCategory]} pagination={pagination} columnVisibility={columnVisibility} />
+            <DataTable columns={columns} categoryToProducts={categoryToProducts} selectedCategory={selectedCategory} pagination={pagination} columnVisibility={columnVisibility} />
         </div>
     );
 };

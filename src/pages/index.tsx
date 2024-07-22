@@ -48,7 +48,7 @@ const HomePage = () => {
       {/* Hamburger button */}
       {isOpen ? null : (
         <button
-          className="fixed top-4 left-4 p-2 bg-orange-200 rounded-md z-30"
+          className="fixed top-4 left-4 p-2 bg-green-200 rounded-md z-30"
 
           onClick={togglePanel}
         >

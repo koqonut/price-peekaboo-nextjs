@@ -20,7 +20,7 @@ const ConsoleLogger = () => {
     }, []);
 
     return (
-        <div style={{ position: 'fixed', top: '0', left: '0', right: '0', zIndex: 9999, backgroundColor: 'white', color: 'black', maxHeight: '200px', overflowY: 'auto', padding: '10px' }}>
+        <div style={{ position: 'fixed', top: '0', left: '150', right: '0', zIndex: 9999, backgroundColor: 'white', color: 'black', maxHeight: '200px', overflowY: 'auto', padding: '10px' }}>
             {logs.map((log, index) => (
                 <pre key={index}>{log}</pre>
             ))}

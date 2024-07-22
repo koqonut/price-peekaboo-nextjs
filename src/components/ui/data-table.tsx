@@ -12,6 +12,7 @@ import {
     getSortedRowModel
 } from "@tanstack/react-table"
 
+import { Product } from "../../data/ProductDefinition";
 
 import {
     Table,
@@ -23,24 +24,25 @@ import {
 } from "@/src/components/ui/table"
 import { Input } from "@/src/components/ui/input"
 import { Button } from "@/src/components/ui/button"
-import { ChevronsRightLeft } from "lucide-react"
 
-interface DataTableProps<TData, TValue> {
-    columns: ColumnDef<TData, TValue>[]
-    data: TData[]
-    pagination: { pageSize: number, }
-    columnVisibility: { [key: string]: boolean }
+interface DataTableProps {
+    columns: ColumnDef<Product, any>[];
+    categoryToProducts: { [category: string]: Product[] };
+    selectedCategory: string;
+    pagination: { pageSize: number };
+    columnVisibility: { [key: string]: boolean };
 }
 
 
-
-
-export function DataTable<TData, TValue>({
+export const DataTable = ({
     columns,
-    data,
+    categoryToProducts,
     pagination,
-    columnVisibility
-}: DataTableProps<TData, TValue>) {
+    columnVisibility,
+    selectedCategory
+}: DataTableProps) => {
+    const data = categoryToProducts[selectedCategory] || []; // Fallback to an empty array if no category matches
+
     const [columnFilters, setColumnFilters] = React.useState<ColumnFiltersState>([])
     const [sorting, setSorting] = React.useState<SortingState>([])
     const table = useReactTable({
@@ -86,7 +88,7 @@ export function DataTable<TData, TValue>({
                     variant="outline"
                     size="sm"
                     onClick={handleResetFilter} // Call handleResetFilter on button click
-                    className="ml-2 bg-orange-100 hover:bg-orange-200 focus:bg-orange-300"
+                    className="ml-2 bg-green-100 hover:bg-green-200 focus:bg-green-300"
                 >
                     Clear Filter
                 </Button>
@@ -113,12 +115,12 @@ export function DataTable<TData, TValue>({
                             </TableRow>
                         ))}
                     </TableHeader>
-                    <TableBody>
+                    <TableBody key={selectedCategory}>
                         {table.getRowModel().rows?.length ? (
                             table.getRowModel().rows.map((row) => (
 
                                 <TableRow
-                                    key={row.id}
+                                    key={`${row.id}-${selectedCategory}`}
                                     data-state={row.getIsSelected() && "selected"}>
                                     {row.getVisibleCells().map((cell) => {
                                         const numericId = parseInt(row.id, 10);
@@ -150,7 +152,7 @@ export function DataTable<TData, TValue>({
                 <Button
                     variant="outline"
                     size="sm"
-                    className="ml-2 bg-orange-100 hover:bg-orange-200 focus:bg-orange-300"
+                    className="ml-2 bg-green-100 hover:bg-green-200 focus:bg-green-300"
 
                     onClick={() => table.previousPage()}
                     disabled={!table.getCanPreviousPage()}
@@ -167,7 +169,7 @@ export function DataTable<TData, TValue>({
                 <Button
                     variant="outline"
                     size="sm"
-                    className="ml-2 bg-orange-100 hover:bg-orange-200 focus:bg-orange-300"
+                    className="ml-2 bg-green-100 hover:bg-green-200 focus:bg-green-300"
 
                     onClick={() => table.nextPage()}
                     disabled={!table.getCanNextPage()}
@@ -178,3 +180,4 @@ export function DataTable<TData, TValue>({
         </div >
     )
 }
+
