@@ -1,8 +1,9 @@
 'use client';
 
 export type Product = {
-    id: number;
+    id: string;
     category: string;
+    dealPrice: string;
     price: string;
     name: string;
     lastUpdatedDate: string;

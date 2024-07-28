@@ -43,8 +43,26 @@ export const columns: ColumnDef<Product>[] = [
         },
     },
     {
+        accessorKey: "dealPrice",
+        header: () => <div className="text-right">Sale Price</div>,
+        cell: ({ row }) => {
+            const dealPrice = parseFloat(row.getValue("dealPrice"))
+            const price = parseFloat(row.getValue("price"));
+            const dealPriceFormatted = new Intl.NumberFormat("en-US", {
+                style: "currency",
+                currency: "CAD",
+            }).format(dealPrice)
+
+            return <div className="text-right font-medium">
+                <span style={{ color: dealPrice !== price ? 'darkgreen' : 'inherit' }}>
+                    {dealPriceFormatted}
+                </span>
+            </div>
+        },
+    },
+    {
         accessorKey: "price",
-        header: () => <div className="text-right">Price</div>,
+        header: () => <div className="text-right">Regular Price</div>,
         cell: ({ row }) => {
             const price = parseFloat(row.getValue("price"))
             const formatted = new Intl.NumberFormat("en-US", {
