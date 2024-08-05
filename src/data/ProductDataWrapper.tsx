@@ -26,7 +26,7 @@ export const ProductData = (): ProductDataReturnType => {
         }
     });
 
-    const categories = ["All", ...Array.from(categorySet)];
+    const categories = ["All", "Fruits", "Vegetables", "Dairy and Eggs", "Pantry Staples", "Meat", "Snacks & Beverages", "Personal Care", "Household Supplies"];
     console.log("Total categories ", categories.length);
     console.log("Total products ", categoryToProducts["All"].length);
 
